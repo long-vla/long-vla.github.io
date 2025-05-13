@@ -19,6 +19,21 @@ function setInterpolationImage(i) {
   $('#interpolation-image-wrapper').empty().append(image);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.slider-container');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const itemWidth = document.querySelector('.slider-item').offsetWidth + 20; // width + margin
+    
+    prevBtn.addEventListener('click', function() {
+      container.scrollLeft -= itemWidth;
+    });
+    
+    nextBtn.addEventListener('click', function() {
+      container.scrollLeft += itemWidth;
+    });
+  });
+
 
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
